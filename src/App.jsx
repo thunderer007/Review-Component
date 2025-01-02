@@ -6,10 +6,8 @@ import Review from "./Review";
 function App() {
   const [people, setPeople] = useState(data);
   const [currentIndex, setCurrentIndex] = useState(0);
-  console.log(people);
   return (
     <>
-      <h1>Welcome</h1>
       <Review
         people={people}
         currentIndex={currentIndex}

@@ -1,6 +1,13 @@
 const Review = ({ people, currentIndex, setCurrentIndex }) => {
   const { name, job, quote, img } = people[currentIndex];
 
+  const handlePrev = () => {
+    if (currentIndex === 0) {
+      return setCurrentIndex(people.length - 1);
+    }
+    setCurrentIndex((prev) => prev - 1);
+  };
+
   const handleNext = () => {
     if (currentIndex === people.length - 1) {
       return setCurrentIndex(0);
@@ -63,7 +70,7 @@ const Review = ({ people, currentIndex, setCurrentIndex }) => {
         </div>
       </article>
       <div className="btn-component">
-        <button className="btn btn-left">
+        <button className="btn btn-left" onClick={handlePrev}>
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18">
             <path
               fill="none"
